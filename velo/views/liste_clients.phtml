@@ -1,0 +1,29 @@
+<h1 align=center>liste des clients </h1>
+
+<table class="table table-primary table-striped-columns">
+    <tr>
+        <th>nom </th>
+        <th>prenom</th>
+        <th>adresse1</th>
+        <th>adresse2</th>
+        <th>email</th>
+        <th>telephone</th>
+        <th>code postale</th>
+        <th>Nouvelle facture</th>
+
+    </tr>
+    <?php foreach ($st as $select) : ?>
+        <tr>
+            <td><?php echo $select['nom']  ?></td>
+            <td><?php echo $select['prenom']  ?></td>
+            <td><?php echo $select['adresse1']  ?></td>
+            <td><?php echo $select['adresse2']  ?></td>
+            <td><?php echo $select['email']  ?></td>
+            <td><?php echo $select['telephone']  ?></td>
+            <td><?php echo $select['code_postal']  ?></td>
+            <td><a href="/velo/facture/facture/<?php echo $select['id']  ?>">Nouvelle facture</a></td>
+        </tr>
+    <?php endforeach ?>
+
+
+</table>

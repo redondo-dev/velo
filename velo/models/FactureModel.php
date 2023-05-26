@@ -1,0 +1,32 @@
+<?php
+
+namespace models;
+
+class FactureModel
+{
+
+    private $bdd;
+    public function __construct()
+    {
+        $this->bdd = new \pdo("mysql:host=localhost;dbname=velo", "root", "");
+    }
+
+
+    public function facturer($price, $price_ttc, $id_clients, $id_personel)
+    {
+        $select = $this->bdd->prepare("INSERT INTO facture(date,prix_ht, prix_ttc,id_clients,id_personnel) VALUES (NOW(),?, ?, ?, ? )");
+        $select->execute([$price, $price_ttc, $id_clients, $id_personel]);
+    }
+    public function addProductToInvoice($quantite, $product, $facture)
+    {
+        $select = $this->bdd->prepare("INSERT INTO ligne_facture (quantite,id_produits,id_facture) VALUES (?, ?, ? )");
+        $select->execute([$quantite, $product, $facture]);
+    }
+
+    //     public function count()
+    //     {
+    //         $select = $this->bdd->prepare("SELECT FROM ) VALUES (?, ?, ?, ? ) ");
+    //         $select->execute();
+    //         return  $select->fetchAll();
+    //     }
+}

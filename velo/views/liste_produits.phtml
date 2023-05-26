@@ -1,0 +1,22 @@
+<h1 align=center>liste des produits</h1>
+
+<table class="table-info table table-striped-columns">
+      <tr>
+            <th>nom </th>
+            <th>reference</th>
+            <th>stock</th>
+            <th>prix ht</th>
+            
+
+      </tr>
+      <?php foreach ($stmt as $select) : ?>
+            <tr>
+                  <td><?php echo $select['name']  ?></td>
+                  <td><?php echo $select['reference']  ?></td>
+                  <td><?php echo $select['stock']  ?></td>
+                  <td><?php echo $select['price_ht']  ?></td>
+            </tr>
+      <?php endforeach ?>
+
+
+</table>
