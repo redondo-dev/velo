@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link " href="admin/users">home page </a>
+            <a class="nav-item nav-link" href="produits/ajoutProduits">formulaire Produits</a>
+            <a class="nav-item nav-link" href="produits/afficher">Afficher les produits</a>
+            <a class="nav-item nav-link " href="formulaire/ajoutClient"> Formulaire de Clients</a>
+            <a class="nav-item nav-link" href="clients/afficherClient">Afficher les clients</a>
+            <a class="nav-item nav-link " href="facture/facture">Facture</a>
+        </div>
+    </div>
+</nav>
+
+<h1 align=center>Liste des clients </h1>
+
+<table class="table table-primary table-striped-columns">
+    <tr>
+        <th>Nom </th>
+        <th>Prenom</th>
+        <th>Adresse1</th>
+        <th>Adresse2</th>
+        <th>Email</th>
+        <th>Telephone</th>
+        <th>Code postale</th>
+        <th>Nouvelle facture</th>
+
+    </tr>
+    <?php foreach ($st as $select) : ?>
+        <tr>
+            <td><?php echo $select['nom']  ?></td>
+            <td><?php echo $select['prenom']  ?></td>
+            <td><?php echo $select['adresse1']  ?></td>
+            <td><?php echo $select['adresse2']  ?></td>
+            <td><?php echo $select['email']  ?></td>
+            <td><?php echo $select['telephone']  ?></td>
+            <td><?php echo $select['code_postal']  ?></td>
+            <td><a href="/velo/facture/facture/<?php echo $select['id']  ?>">Nouvelle facture</a></td>
+        </tr>
+    <?php endforeach ?>
+
+
+</table>

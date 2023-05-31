@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                        <a class="nav-item nav-link " href="admin/users">home page </a>
+                        <a class="nav-item nav-link" href="produits/ajoutProduits">formulaire Produits</a>
+                        <a class="nav-item nav-link" href="produits/afficher">Afficher les produits</a>
+                        <a class="nav-item nav-link " href="formulaire/ajoutClient"> Formulaire de Clients</a>
+                        <a class="nav-item nav-link" href="clients/afficherClient">Afficher les clients</a>
+                        <a class="nav-item nav-link " href="facture/facture">Facture</a>
+                </div>
+        </div>
+</nav>
+
+<body>
+        <h1 align=center> formulaire des clients</h1>
+
+        <form align=center class="table table-striped-columns " action="formulaire/ajoutClient" method="post">
+
+                <label for="nom">Nom :</label><br><br>
+                <input type="text" name="name" id=""><br><br>
+
+                <label for="prenom">Prenom:</label><br><br>
+                <input type="prenom" name="prenom" id=""><br><br>
+
+                <label for="email">Email:</label><br><br><br>
+                <input type="email" name="email" id=""><br><br>
+
+                <label for="tel">telephone</label><br><br>
+                <input type="tel" name="tel" id=""><br><br>
+
+                <label for="adress1">Adresse1 :</label><br><br>
+                <input type="text" name="adresse1" id=""><br><br>
+
+                <input type="text" name="adresse2" id=""><br><br>
+                <label for="adress2">adresse 2:</label><br><br>
+
+                <input type="number" name="code_postal" id=""><br><br>
+                <label for="code_postal">code postal:</label> <br><br>
+
+                <input type="submit" name='submit' value="valider">
+
+
+
+
+        </form>
+
+</body>

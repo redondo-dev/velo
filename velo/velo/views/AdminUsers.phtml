@@ -1,0 +1,30 @@
+<body>
+    <h1 align=center>Velo sccuderia pedale </h1>
+    <h2 align=center>Connexion</h2>
+
+    <form class="admin" action="admin/login" method="post">
+        <div class="mb-3">
+            <label for="pseudo" class="form-label">pseudo</label>
+            <input type="pseudo" class="form-control" id="pseudo" name="pseudo">
+            <div id="pseudo" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Mot de pass</label>
+            <input type="password" class="form-control" id="password" name="password">
+        </div>
+
+        <button type="submit" name="submit" class="btn btn-primary">se connecter</button>
+    </form>
+
+    <?php
+    if (isset($error)) {
+        echo $error;
+    } else {
+        echo "";
+    }
+
+    ?>
+
+</body>
+
+</html>

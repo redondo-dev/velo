@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link " href="admin/users">home page </a>
+            <a class="nav-item nav-link" href="produits/ajoutProduits">formulaire Produits</a>
+            <a class="nav-item nav-link" href="produits/afficher">Afficher les produits</a>
+            <a class="nav-item nav-link " href="formulaire/ajoutClient"> Formulaire de Clients</a>
+            <a class="nav-item nav-link" href="clients/afficherClient">Afficher les clients</a>
+            <a class="nav-item nav-link " href="facture/facture">Facture</a>
+        </div>
+    </div>
+</nav>
+
+<h1 align=center>Entrez vos produits</h1>
+<form align=center class="form-control" action="produits/ajoutProduits" method="post">
+
+    <label for="name">Nom du produit</label><br><br>
+    <input type="text" name="nom" id=""><br><br>
+
+    <label for="name">reference du produit</label><br><br>
+    <input type="text" name="reference" id=""><br><br>
+
+    <label for="name">prix du produit</label><br><br>
+    <input type="number" name="price_ht" id=""><br><br>
+
+    <label for="name">stock du produit</label><br><br>
+    <input type="text" name="stock" id=""><br><br>
+
+    <label for="name">alerte </label><br><br>
+    <input type="text" name="alerte" id=""><br><br>
+
+    <button class="btn btn-success" type="submit" name="submit">valider</button>
+
+</form>

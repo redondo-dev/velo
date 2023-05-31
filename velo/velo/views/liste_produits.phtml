@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                  <a class="nav-item nav-link " href="admin/users">home page </a>
+                  <a class="nav-item nav-link" href="produits/ajoutProduits">formulaire Produits</a>
+                  <a class="nav-item nav-link" href="produits/afficher">Afficher les produits</a>
+                  <a class="nav-item nav-link " href="formulaire/ajoutClient"> Formulaire de Clients</a>
+                  <a class="nav-item nav-link" href="clients/afficherClient">Afficher les clients</a>
+                  <a class="nav-item nav-link " href="facture/facture">Facture</a>
+            </div>
+      </div>
+</nav>
+
+<h1 align=center>liste des produits</h1>
+
+<table class="table-info table table-striped-columns">
+      <tr>
+            <th>Nom </th>
+            <th>Reference</th>
+            <th>Prix</th>
+            <th>Stock</th>
+
+
+
+
+      </tr>
+      <?php foreach ($stmt as $select) : ?>
+            <tr>
+                  <td><?php echo $select['name']  ?></td>
+                  <td><?php echo $select['reference']  ?></td>
+
+                  <td><?php echo $select['price_ht']  ?></td>
+                  <td><?php echo $select['stock']  ?></td>
+
+            </tr>
+      <?php endforeach ?>
+
+
+</table>
