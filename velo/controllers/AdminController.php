@@ -19,9 +19,7 @@ class AdminController
     {
         $data = new AdminModel();
         $result = $data;
-
-        $page = "views/AdminUsers.phtml";
-        require_once "views/base.phtml";
+        require_once "views/AdminUsers.phtml";
     }
 
     public function login()

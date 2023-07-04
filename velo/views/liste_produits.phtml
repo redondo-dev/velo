@@ -1,20 +1,24 @@
-<h1 align=center>liste des produits</h1>
+<h1 align=center><i class="fa-brands fa-product-hunt"></i> Liste des produits</h1>
 
-<table class="table-info table table-striped-columns">
-      <tr>
-            <th>nom </th>
-            <th>reference</th>
-            <th>stock</th>
-            <th>prix ht</th>
-            
+<!-- <table class="table-info table table-striped-columns"> -->
+<table align=center class="table table-info table-dark table-striped center-table red-border mt-4 mx-auto my-5 px-4">
+      <tr align=center>
+            <th>Nom </th>
+            <th>Reference</th>
+            <th>Prix</th>
+            <th>Stock</th>H
+
+
+
 
       </tr>
       <?php foreach ($stmt as $select) : ?>
-            <tr>
+            <tr align=center>
                   <td><?php echo $select['name']  ?></td>
                   <td><?php echo $select['reference']  ?></td>
-                  <td><?php echo $select['stock']  ?></td>
                   <td><?php echo $select['price_ht']  ?></td>
+                  <td><?php echo $select['stock']  ?></td>
+
             </tr>
       <?php endforeach ?>
 

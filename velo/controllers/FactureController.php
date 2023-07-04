@@ -2,15 +2,16 @@
 
 namespace controllers;
 
-use models\ProduitsModel;
+use models\ClientsModel;
 use models\FactureModel;
+use models\ProduitsModel;
 
 class FactureController
 {
 
     public function facture($id_client = "")
     {
-        var_dump($id_client);
+
 
         if (isset($_SESSION['id'])) {
 
@@ -57,19 +58,32 @@ class FactureController
 
     public function newfacture($id_client = "")
     {
+
         $price = $_POST['prix_ht'];
         $price_ttc = $_POST['prix_ttc'];
         $id_personel = $_SESSION['id'];
 
         $facture = new FactureModel();
-        $facture->facturer($price, $price_ttc, $id_client, $id_personel);
+
+        $idfacture = $facture->facturer($price, $price_ttc, $id_client, $id_personel);
+
 
         $newfacture = new FactureModel();
         foreach ($_SESSION['panier'] as $select) {
             $quantite = $select['quantite'];
             $product = $select['id'];
-            $facture = 3;
-            $newfacture->addProductToInvoice($quantite, $product, $facture);
+            $newfacture->addProductToInvoice($quantite, $product, $idfacture);
         }
+
+        // echo '<span style="color:dark ;font-size:30px;font-family:calibri;text-align:center;">votre facture à  été ajoutée avec succés </span>';
+        // echo '<a href="http://localhost/velo/facture/facture/id">retrour vers le panier </a>';
+
+        // Récupérer les informations de la facture à partir de son ID
+
+        $factureModel = new FactureModel();
+        $facture = $factureModel->getFacture($idfacture);
+
+        $page = "views/editerfacture.phtml";
+        require_once "views/base.phtml";
     }
 }

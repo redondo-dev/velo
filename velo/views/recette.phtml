@@ -1,0 +1,82 @@
+<a href="facture/facture">revenvir vers la page facture</a>
+<div>
+    <h2 align="center">Tableau des Recettes </h2>
+    <table class="table-info table table-dark table-striped">
+        <tr align=center>
+            <th>Recette journaliere</th>
+            <th>Recette mensuelle</th>
+            <th>Recette annuelle</th>
+        </tr>
+        <tr align=center>
+
+            <td><?php echo $totalDay["prix_ttc"]  ?></td>
+            <td><?php echo $totalMounth["prix_ttc"] ?></td>
+            <td><?php echo $totalYear["prix_ttc"]  ?></td>
+        </tr>
+</div>
+
+
+<div>
+
+    <table align="center" class="table-info table table-dark table-striped">
+        <h2 align="center">Tableau des Recettes Journalieres par vendeur </h2>
+        <tr align=center>
+            <th>Numero du Vendeur</th>
+            <th>Recette Journaliere</th>
+
+        </tr>
+        <?php foreach ($totalbysalerDay as $select) : ?>
+            <tr align=center>
+                <td><?php echo $select["id_personnel"]  ?></td>
+                <td><?php echo $select["prix_ttc"] ?></td>
+
+            </tr>
+
+
+</div> <?php endforeach ?>
+
+
+
+<div>
+
+    <table align="center" class="table-info table table-dark table-striped">
+        <h2 align="center">Tableau des Recettes Mensuelles par vendeur </h2>
+        <tr align=center>
+            <th>Numero du Vendeur</th>
+            <th>Recette Mensuelle</th>
+
+        </tr>
+        <?php foreach ($totalbysalerMounth as $select) : ?>
+            <tr align=center>
+                <td><?php echo $select["id_personnel"]  ?></td>
+                <td><?php echo $select["prix_ttc"] ?></td>
+
+            </tr>
+
+
+</div> <?php endforeach ?>
+<div>
+
+    <table align="center" class="table-info table table-dark table-striped">
+        <h2 align="center">Tableau des Recettes Annuelles par vendeur </h2>
+        <tr align=center>
+            <th>Numero du Vendeur</th>
+            <th>Recette Annuelle</th>
+
+        </tr>
+        <?php foreach ($totalbysalerYear as $select) : ?>
+            <tr align=center>
+
+                <td><?php echo $select["id_personnel"]  ?></td>
+                <td><?php echo $select["prix_ttc"] ?></td>
+
+            </tr>
+
+
+</div> <?php endforeach ?>
+
+<div>
+
+
+
+</div>

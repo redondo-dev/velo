@@ -15,7 +15,7 @@ class ProduitsModel
     public function ajoutProduits($name, $reference, $price, $stock, $alerte)
     {
         $select = $this->bdd->prepare("INSERT INTO produits( name,reference, price_ht, stock, alerte) VALUES (?, ?, ?, ?,? )");
-        $select->execute([$name, $reference, $stock, $price, $alerte]);
+        $select->execute([$name, $reference, $price, $stock, $alerte]);
     }
 
     public function findAll()

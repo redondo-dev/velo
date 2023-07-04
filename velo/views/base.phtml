@@ -14,26 +14,21 @@
 </head>
 
 
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link " href="admin/users">home page </a>
-            <a class="nav-item nav-link" href="produits/ajoutProduits">formulaire Produits</a>
-            <a class="nav-item nav-link" href="produits/afficher">Afficher les produits</a>
-            <a class="nav-item nav-link " href="formulaire/ajoutClient"> Formulaire de Clients</a>
-            <a class="nav-item nav-link" href="clients/afficherClient">Afficher les clients</a>
-            <a class="nav-item nav-link " href="facture/facture">Facture</a>
-        </div>
-    </div>
-</nav>
-
-
-
-
 <main>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link " href="admin/users"><i class="fa-solid fa-house fa-beat"></i> Home page </a>
+                <a class="nav-item nav-link" href="produits/ajoutProduits">Formulaire Produits</a>
+                <a class="nav-item nav-link" href="produits/afficher">Afficher les produits</a>
+                <a class="nav-item nav-link " href="formulaire/ajoutClient"> Formulaire de Clients</a>
+                <a class="nav-item nav-link" href="clients/afficherClient">Afficher les clients</a>
+                <a class="nav-item nav-link " href="facture/facture/<?php echo $_SESSION['id']; ?>">Facture</a>
+
+            </div>
+        </div>
+    </nav>
     <?php require_once $page; ?>
 
 

@@ -16,15 +16,4 @@ class ClientsModel
         $select->execute();
         return $select->fetchAll();
     }
-
-
-    public function Create()
-    {
-    }
-    public function Delete()
-    {
-    }
-    public function Update()
-    {
-    }
 }

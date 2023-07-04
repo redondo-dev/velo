@@ -1,0 +1,41 @@
+<a href="facture/facture">revenvir vers la page facture</a>
+
+<div>
+
+    <table align="center" class="table-info table table-dark table-striped">
+        <h2 align="center">Tableau des Recettes Mensuelles par vendeur </h2>
+        <tr align=center>
+
+            <th>Numero de vendeur</th>
+            <th>Recette Mensuelle</th>
+
+        </tr>
+        <?php foreach ($totalbysalerMounth as $select) : ?>
+            <tr align=center>
+                <td><?php echo $select["id_personnel"]  ?></td>
+                <td><?php echo $select["prix_ttc"] ?></td>
+
+            </tr>
+
+
+</div> <?php endforeach ?>
+<div>
+
+    <table align="center" class="table-info table table-dark table-striped">
+        <h2 align="center">Tableau des Recettes Annuelles par vendeur </h2>
+        <tr align=center>
+            <th>Nom du Vendeur</th>
+            <th>Recette Annuelle</th>
+
+        </tr>
+        <?php foreach ($totalbysalerYear as $select) : ?>
+            <tr align=center>
+                <td><?php echo $select["id_personnel"]  ?></td>
+                <td><?php echo $select["prix_ttc"] ?></td>
+
+            </tr>
+
+
+</div> <?php endforeach ?>
+
+<div>

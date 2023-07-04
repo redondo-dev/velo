@@ -43,5 +43,4 @@ class ProduitsController
             echo " error :page produits not found";
         }
     }
-
 }

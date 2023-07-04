@@ -1,18 +1,53 @@
 body{
-     background-color: rgb(237, 229, 226); 
-    background-image: url(/assets/velo.jpg);
+    background-color: rgb(225, 169, 149); 
+     background-image:url(../assets/velo.jpg) ; 
+    background-size:cover;
+    background-repeat: no-repeat; 
+
     
 }
+h1,h2{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color:rgb(158, 60, 60);
+   
+}
 .form-control{
-
     margin: 20px;
     padding: 20px;
 }
 form{
-    width:300px;
+    width:600px;
+    margin:0 auto;
+    border-radius:10px;
+    border:3px solid rgb(215, 106, 106);
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+
+}
+.admin{
     margin:0 auto;
 }
-/* .mb3{
-    width:300px;
-    margin:0 auto;
-} */
+   
+          .red-border {
+            border: 1px solid red;
+          } 
+
+button{
+    margin:10px;
+    border-radius: 9999px;
+    border-color: rgb(213, 86, 86);
+}
+.btn {
+    color:black;
+    background-color: azure;
+    text-decoration-style: solid;
+    border: none;
+
+}
+a{
+
+    text-decoration: none;
+}
