@@ -1,0 +1,108 @@
+<h1 align="center"> <i class="fa-solid fa-receipt"></i> Facture </h1>
+
+
+<div class="table-responsive" id="orderTable">
+    <table class="table table-info table-dark table-striped center-table red-border">
+        <tr align=center>
+            <th>Nom </th>
+            <th>Reference</th>
+            <th>Prix ht</th>
+            <th>Tva</th>
+            <th>Quantité</th>
+            <th>Action</th>
+
+
+        </tr>
+        <?php foreach ($stmt as $select) : ?>
+            <tr align=center>
+                <form action="" method="post">
+                    <td><?php echo $select['name']  ?></td>
+
+                    <input type="hidden" name='name' value="<?= $select['name'] ?>">
+                    <input type="hidden" name='idproduit' value="<?= $select['id'] ?>">
+
+                    <td><?php echo $select['reference']  ?></td>
+                    <td><?php echo $select['price_ht']  ?></td>
+                    <td><?php echo $select['taux']  ?></td>
+
+                    <input type="hidden" name='price' value="<?= $select['price_ht'] ?>">
+                    <input type="hidden" name='taux' value="<?= $select['taux'] ?>">
+
+                    <td><input type="number" name="nombre" min="1" placeholder="1"></td>
+                    <td>
+
+                        <!-- <button type="submit" class="text-danger me2 deleteBtn" title="voir supprimer" value="delete" name="delete"> Supprimer <i class="fas fa-trash-alt"></i></a> -->
+                        <button type="submit" name="submit" class="text-success me2 addBtn" title="ajouter"> Ajouter <i class="fa-solid fa-square-plus"></i></a>
+
+                    </td>
+                </form>
+            </tr>
+        <?php endforeach ?>
+
+
+
+
+
+    </table>
+    <h3 align="center"><i class="fa-solid fa-cart-shopping"></i> Panier</h3>
+    <a class="btn btn-danger" href='/velo/facture/panierDestroy'><i class="fa-solid fa-trash"></i> Reset</a>
+    <div>
+        <h3 align=center>TABLEAU DES VENTES </h3>
+        <table align=center class="table table-info table-dark table-striped center-table red-border">
+            <tr align=center>
+                <th>Nom du produit </th>
+                <th>Prix</th>
+                <th>TVA</th>
+                <th>Prix total ht</th>
+                <th>Prix total ttc</th>
+                <th>Quantite</th>
+
+            </tr>
+            <?php
+            $totalprixHT = 0;
+            $totalprixTTC = 0;
+            ?>
+            <?php foreach ($_SESSION['panier'] as $select) : ?>
+                <tr align=center>
+                    <?php $prixHT = floatval($select['prix']) * floatval($select['quantite']);
+                    $prixTTC =  floatval($prixHT) * (floatval($select['taux']) / 100 + 1);
+
+
+                    ?>
+
+                    <td><?php echo $select['nom']  ?></td>
+                    <td><?php echo $select['prix']  ?></td>
+                    <td><?php echo $select['taux']  ?></td>
+                    <td><?php echo $prixHT ?></td>
+                    <td><?php echo $prixTTC ?></td>
+                    <td><?php echo $select['quantite']  ?></td>
+                </tr>
+
+                <?php $totalprixHT = $totalprixHT + $prixHT;
+                $totalprixTTC = $totalprixTTC + $prixTTC; ?>
+
+            <?php endforeach ?>
+            <tr align=center>
+                <td>TOTAUX</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><?php echo $totalprixHT ?></td>
+                <td><?php echo $totalprixTTC ?></td>
+
+                <td>&nbsp;</td>
+
+            </tr>
+            <form action="/velo/facture/newfacture/<?= $id_client ?>" method="post">
+
+                <input type="hidden" name="prix_ht" value="<?php echo $totalprixHT ?>">
+                <input type="hidden" name="prix_ttc" value="<?php echo $totalprixTTC ?>">
+
+                <button a href="/velo/facture/newfacture/<?php echo $_SESSION['id']; ?>" type="submit" class="btn btn-primary" name="submit"> Editer la facture </a></button>
+
+
+            </form>
+
+            <button type="submit" class="btn" name="submit"><a href="/velo/recette/recettepage"> Tableau des Recettes </a></button>
+            <button class="btn" name="submit"><a href="/velo/vendeur/vendeur/<?= $_SESSION['id'] ?>"> Mes recettes </a></button>
+
+    </div>

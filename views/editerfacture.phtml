@@ -1,0 +1,46 @@
+<table align="center" class="table table-info table-dark table-striped">
+    <tr>
+        <th colspan="2">
+            <h1 align="center"><strong> <i class="fa-solid fa-receipt"></i> Facture</strong></h1>
+        </th>
+    </tr>
+
+    <tr>
+        <td align="center">ID Facture:</td>
+        <td align="center"><?php echo $facture['id']; ?></td>
+    </tr>
+
+    <tr>
+        <td align="center">Nom:</td>
+        <td align="center"><?php echo $facture['nom']; ?></td>
+    </tr>
+
+    <tr>
+        <td align="center">Prénom:</td>
+        <td align="center"><?php echo $facture['prenom']; ?></td>
+    </tr>
+
+    <tr>
+        <td align="center">Adresse:</td>
+        <td align="center"><?php echo $facture['adresse1']; ?></td>
+
+    </tr>
+    <tr>
+        <td align="center">Date:</td>
+        <td align="center"><?php echo $facture['date']; ?></td>
+    </tr>
+
+    <tr>
+        <td align="center">Prix HT:</td>
+        <td align="center"><?php echo $facture['prix_ht']; ?></td>
+    </tr>
+
+    <tr>
+        <td align="center">Prix TTC:</td>
+        <td align="center"><?php echo $facture['prix_ttc']; ?></td>
+    </tr>
+
+</table>
+
+<span style="color: dark; font-size: 30px; font-family: Calibri; text-align: center;">Votre facture a été ajoutée avec succès</span>
+<a href="http://localhost/velo/facture/facture/<?php echo $facture['id']; ?>">Retour vers le panier</a>
